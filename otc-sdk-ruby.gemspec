@@ -1,11 +1,11 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'otc/sdk/ruby/version'
+require "otc/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "otc-sdk-ruby"
-  spec.version       = Otc::Sdk::Ruby::VERSION
+  spec.version       = Otc::VERSION
   spec.authors       = ["Streetspotr GmbH"]
   spec.email         = ["devs@streetspotr.com"]
 
