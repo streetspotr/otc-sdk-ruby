@@ -23,9 +23,16 @@ Otc::Configuration.configure do |config|
 end
 ```
 
-## Auto Scaling
+## General
 
-All available fields of `Otc::ASGroup` are available here: https://docs.otc.t-systems.com/en-us/api/as/en-us_topic_0043063030.html
+All responses are wrapped by objects that hold their information via method accessors. Example:
+
+    ecs = Otc::ECS.query_one
+    ecs.name # => "cool-server"
+
+Some information is cached for improved performance using memoization and is therefore not updated on subsequent calls.
+
+## Auto Scaling
 
 ### Querying
 
@@ -34,3 +41,30 @@ All available fields of `Otc::ASGroup` are available here: https://docs.otc.t-sy
     Otc::ASGroup.query_one                           # get the first auto scaling group
     Otc::ASGroup.query_one(name: "my_scaling_group") # get the first auto scaling group filtered by the given name
     
+    # convenience methods
+    group = Otc::ASGroup.query_one(name: "my_scaling_group") # => #<Otc::ASGroup>
+    group.instances                                          # get all instances of the auto scaling group
+
+## EIP
+
+### Querying
+
+    Otc::EIP.query_all # get all EIPs
+
+## ECS
+
+### Querying
+
+    Otc::ECS.query_all                    # get all ecs
+    Otc::ECS.query_all(name: "my_server") # get all ecs filtered by the given name
+    Otc::ECS.query_one                    # get the first ecs
+    Otc::ECS.query_one(name: "my_server") # get the first ecs filtered by the given name
+    
+    # convenience methods
+    ecs = Otc::ECS.query_one # => #<Otc::ECS>
+    ecs.public_ip            # => "160.44.232.150"
+
+## Known Issues
+
+- The API uses a limit for nearly every API request but the SDK does not support limits at the moment, so most `query_all` methods won't return all results.
+- Obtaining the public IP address of an ECS instance is rather cumbersome. There might be a better possibility than comparing the private IP of the ECS instance to the private IP of all EIPs.
