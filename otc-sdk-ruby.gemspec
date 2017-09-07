@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "hashie"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "webmock"
+  spec.add_development_dependency "rake"
 end
