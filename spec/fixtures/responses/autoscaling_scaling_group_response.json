@@ -1,0 +1,83 @@
+{
+    "limit": 20,
+    "scaling_groups": [
+        {
+            "networks": [
+                {
+                    "id": "1fa08deb-005a-44bf-b54e-7916a93f645c"
+                }
+            ],
+            "detail": null,
+            "notifications": [],
+            "scaling_group_name": "first_sg",
+            "scaling_group_id": "571ba011-964d-48c7-9f79-464c2ef7a2a6",
+            "scaling_group_status": "INSERVICE",
+            "scaling_configuration_id": "b06e847f-a31b-443b-859c-9aaf04e6d0fd",
+            "scaling_configuration_name": "second_conf",
+            "current_instance_number": 1,
+            "desire_instance_number": 1,
+            "min_instance_number": 0,
+            "max_instance_number": 3,
+            "cool_down_time": 900,
+            "lb_listener_id": "d7c21f308ade4bd8bedd979b36879142",
+            "lbaas_listeners": [],
+            "cloud_location_id": null,
+            "available_zones": [
+                "eu-de-02",
+                "eu-de-01"
+            ],
+            "security_groups": [
+                {
+                    "id": "c77cfe40-e98e-43b1-86a1-46f223024b21"
+                }
+            ],
+            "create_time": "2017-09-05T13:05:40Z",
+            "vpc_id": "957013f4-8605-4189-a324-8ca3664dcd3a",
+            "health_periodic_audit_method": "ELB_AUDIT",
+            "health_periodic_audit_time": 5,
+            "instance_terminate_policy": "OLD_INSTANCE",
+            "is_scaling": false,
+            "delete_publicip": true
+        },
+        {
+            "networks": [
+                {
+                    "id": "1fa08deb-005a-44bf-b54e-7916a93f645c"
+                }
+            ],
+            "detail": null,
+            "notifications": [],
+            "scaling_group_name": "second_sg",
+            "scaling_group_id": "e43cb089-75c9-4112-86d6-381769327fab",
+            "scaling_group_status": "INSERVICE",
+            "scaling_configuration_id": "c42e3169-3877-41f5-af3e-c2e6b2b056a3",
+            "scaling_configuration_name": "first_conf",
+            "current_instance_number": 0,
+            "desire_instance_number": 0,
+            "min_instance_number": 0,
+            "max_instance_number": 3,
+            "cool_down_time": 900,
+            "lb_listener_id": null,
+            "lbaas_listeners": [],
+            "cloud_location_id": null,
+            "available_zones": [
+                "eu-de-01",
+                "eu-de-02"
+            ],
+            "security_groups": [
+                {
+                    "id": "c77cfe40-e98e-43b1-86a1-46f223024b21"
+                }
+            ],
+            "create_time": "2017-08-29T09:08:12Z",
+            "vpc_id": "957013f4-8605-4189-a324-8ca3664dcd3a",
+            "health_periodic_audit_method": "NOVA_AUDIT",
+            "health_periodic_audit_time": 5,
+            "instance_terminate_policy": "OLD_INSTANCE",
+            "is_scaling": false,
+            "delete_publicip": true
+        }
+    ],
+    "total_number": 2,
+    "start_number": 0
+}

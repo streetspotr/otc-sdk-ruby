@@ -10,3 +10,7 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+def load_response(response)
+  File.read(File.expand_path("../fixtures/responses/#{response}_response.json", __FILE__))
+end
