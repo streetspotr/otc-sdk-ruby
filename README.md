@@ -22,3 +22,15 @@ Otc::Configuration.configure do |config|
   config.region = "eu-de"
 end
 ```
+
+## Auto Scaling
+
+All available fields of `Otc::ASGroup` are available here: https://docs.otc.t-systems.com/en-us/api/as/en-us_topic_0043063030.html
+
+### Querying
+
+    Otc::ASGroup.query_all                           # get all auto scaling groups
+    Otc::ASGroup.query_all(name: "my_scaling_group") # get all auto scaling groups filtered by the given name
+    Otc::ASGroup.query_one                           # get the first auto scaling group
+    Otc::ASGroup.query_one(name: "my_scaling_group") # get the first auto scaling group filtered by the given name
+    
