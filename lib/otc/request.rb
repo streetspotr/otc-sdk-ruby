@@ -47,6 +47,13 @@ module Otc
         @_token.fetch(:token)
       end
 
+      def get(service:, path:, authenticated_request: true)
+        uri = URI.parse(base_uri(service: service, path: path))
+        headers = { "X-Auth-Token" => token } if authenticated_request
+        req = Net::HTTP::Get.new(uri.request_uri, headers)
+        send(req, uri)
+      end
+
       def post(service:, path:, body:)
         uri = URI.parse(base_uri(service: service, path: path))
         req = Net::HTTP::Post.new(uri.request_uri, "Content-Type" => "application/json;charset=utf8")
