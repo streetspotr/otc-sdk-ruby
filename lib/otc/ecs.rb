@@ -24,5 +24,16 @@ module Otc
     ]
 
     ATTRIBUTES.each { |prop| property prop }
+
+    def public_ip
+      @_public_ip ||= begin
+        private_addresses = self.addresses.values.flatten.map { |val| val["addr"] }
+
+        eip = EIP.query_all.select { |ip| private_addresses.include?(ip.private_ip_address) }.first
+        if eip
+          eip.public_ip_address
+        end
+      end
+    end
   end
 end
