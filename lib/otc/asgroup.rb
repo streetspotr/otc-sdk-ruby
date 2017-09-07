@@ -22,5 +22,14 @@ module Otc
       "cloud_location_id", "available_zones", "security_groups", "create_time", "vpc_id", "health_periodic_audit_method",
       "health_periodic_audit_time", "instance_terminate_policy", "is_scaling", "delete_publicip"
     ].each { |prop| property prop }
+
+    def instances
+      @_instances ||= begin
+        response = Request.get service: "as", path: "/autoscaling-api/v1/#{Configuration.project!}/scaling_group_instance/#{self.scaling_group_id}/list"
+        JSON.parse(response.body)["scaling_group_instances"].map do |group|
+          ASGroupInstance.new(group)
+        end
+      end
+    end
   end
 end

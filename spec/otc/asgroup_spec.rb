@@ -37,4 +37,15 @@ RSpec.describe Otc::ASGroup do
       expect(as_group.scaling_group_name).to eq("first_sg")
     end
   end
+
+  describe "#instances" do
+    it "should retrieve an array of ASGroupInstances" do
+      body = load_response("autoscaling_scaling_group_instances")
+      stub_request(:get, "https://as.eu-de.otc.t-systems.com/autoscaling-api/v1/12343123/scaling_group_instance/987654321/list").
+        to_return(status: 200, body: body)
+
+      as_group_instances = Otc::ASGroup.new("scaling_group_id" => "987654321").instances
+      expect(as_group_instances.first.instance_id).to eq("b25c1589-c96c-465b-9fef-d06540d1945c")
+    end
+  end
 end
