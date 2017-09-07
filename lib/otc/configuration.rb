@@ -1,6 +1,6 @@
 module Otc
   class Configuration
-    class Missing < RuntimeError; end
+    class MissingError < RuntimeError; end
 
     class << self
       attr_accessor :project, :username, :password, :region, :domainname
@@ -25,7 +25,7 @@ module Otc
 
           if self.respond_to?(method)
             send(method).tap do |result|
-              raise Missing, "missing configuration #{method}" if result.nil?
+              raise MissingError, "missing configuration #{method}" if result.nil?
             end
           else
             super

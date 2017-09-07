@@ -23,7 +23,7 @@ RSpec.describe Otc::Configuration do
 
     context "!" do
       it "should raise an error if project is nil" do
-        expect { Otc::Configuration.project! }.to raise_error(Otc::Configuration::Missing)
+        expect { Otc::Configuration.project! }.to raise_error(Otc::Configuration::MissingError)
       end
 
       it "should return the project if it is not nil" do
@@ -41,7 +41,7 @@ RSpec.describe Otc::Configuration do
 
     context "!" do
       it "should raise an error if username is nil" do
-        expect { Otc::Configuration.username! }.to raise_error(Otc::Configuration::Missing)
+        expect { Otc::Configuration.username! }.to raise_error(Otc::Configuration::MissingError)
       end
 
       it "should return the username if it is not nil" do
@@ -59,7 +59,7 @@ RSpec.describe Otc::Configuration do
 
     context "!" do
       it "should raise an error if password is nil" do
-        expect { Otc::Configuration.password! }.to raise_error(Otc::Configuration::Missing)
+        expect { Otc::Configuration.password! }.to raise_error(Otc::Configuration::MissingError)
       end
 
       it "should return the password if it is not nil" do
@@ -77,7 +77,7 @@ RSpec.describe Otc::Configuration do
 
     context "!" do
       it "should raise an error if region is nil" do
-        expect { Otc::Configuration.region! }.to raise_error(Otc::Configuration::Missing)
+        expect { Otc::Configuration.region! }.to raise_error(Otc::Configuration::MissingError)
       end
 
       it "should return the region if it is not nil" do
@@ -95,7 +95,7 @@ RSpec.describe Otc::Configuration do
 
     context "!" do
       it "should raise an error if domainname is nil" do
-        expect { Otc::Configuration.domainname! }.to raise_error(Otc::Configuration::Missing)
+        expect { Otc::Configuration.domainname! }.to raise_error(Otc::Configuration::MissingError)
       end
 
       it "should return the domainname if it is not nil" do
