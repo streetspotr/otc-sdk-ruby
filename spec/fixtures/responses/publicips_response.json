@@ -11,7 +11,13 @@
             "create_time": "2015-07-16 04:22:32",
             "bandwidth_id": "3fa5b383-5a73-4dcb-a314-c6128546d855",
             "bandwidth_share_type": "PER",
-            "bandwidth_size": 5
+            "bandwidth_size": 5,
+	    "profile": {
+                "user_id": 1,
+		"product_id": 1,
+		"region_id": 1
+	    },
+	    "bandwidth_name": "bandwidth"
         },
         {
             "id": "80d5b82e-43b9-4f82-809a-37bec5793bd4",
@@ -24,7 +30,13 @@
             "create_time": "2015-07-16 04:23:03",
             "bandwidth_id": "a79fd11a-047b-4f5b-8f12-99c178cc780a",
             "bandwidth_share_type": "PER",
-            "bandwidth_size": 5
+            "bandwidth_size": 5,
+	    "profile": {
+                "user_id": 1,
+		"product_id": 1,
+		"region_id": 1
+	    },
+	    "bandwidth_name": "bandwidth"
         }
     ]
 }

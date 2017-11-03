@@ -13,7 +13,8 @@ module Otc
 
     [
       "id", "status", "type", "port_id", "public_ip_address", "private_ip_address",
-      "tenant_id", "create_time", "bandwidth_id", "bandwidth_share_type", "bandwidth_size"
+      "tenant_id", "create_time", "bandwidth_id", "bandwidth_share_type", "bandwidth_size",
+      "profile", "bandwidth_name"
     ].each { |prop| property prop }
   end
 end
