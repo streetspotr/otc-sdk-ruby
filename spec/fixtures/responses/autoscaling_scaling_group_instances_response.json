@@ -12,7 +12,8 @@
             "scaling_configuration_name": "discuz",
             "scaling_configuration_id": "ca3dcd84-d197-4c4f-af2a-cf8ba39696ac",
             "create_time": "2015-07-23T06:47:33Z",
-            "instance_name": "discuz_3D210808"
+            "instance_name": "discuz_3D210808",
+            "protect_from_scaling_down": true
         }
     ]
 }
