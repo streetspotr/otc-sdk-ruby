@@ -3,3 +3,6 @@ language: ruby
 rvm:
   - 2.2.2
 before_install: gem install bundler -v 1.14.6
+notifications:
+  email:
+    - devs@streetspotr.com
