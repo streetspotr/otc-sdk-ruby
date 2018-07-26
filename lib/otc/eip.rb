@@ -1,7 +1,7 @@
 require "hashie"
 
 module Otc
-  class EIP < Hashie::Dash
+  class EIP < Hashie::Mash
     class << self
       def query_all
         response = Request.get service: "ecs", path: "/v1/#{Configuration.project!}/publicips"
@@ -10,11 +10,5 @@ module Otc
         end
       end
     end
-
-    [
-      "id", "status", "type", "port_id", "public_ip_address", "private_ip_address",
-      "tenant_id", "create_time", "bandwidth_id", "bandwidth_share_type", "bandwidth_size",
-      "profile", "bandwidth_name"
-    ].each { |prop| property prop }
   end
 end
